@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dansk EPDM Import – Tagfolie skåret på mål</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button { height: auto; }
+    </style>
+</head>
+<body class="bg-white text-slate-900 font-sans">
+
+    <!-- HERO -->
+    <section class="bg-slate-900 text-white min-h-[70vh] flex items-center">
+        <div class="max-w-4xl mx-auto px-6 py-20 text-center">
+            <p class="uppercase tracking-widest text-blue-400 text-sm font-semibold mb-4">Dansk EPDM Import</p>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">EPDM Tagfolie skåret på mål<br class="hidden md:block"> – Uden samlinger</h1>
+            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10">Direkte import fra Tyskland. Spar 4 timers arbejdstid pr. tag.</p>
+            <a href="#beregner" class="inline-block bg-blue-600 hover:bg-blue-700 transition text-white text-lg font-bold px-10 py-4 rounded-lg shadow-lg shadow-blue-600/30">Beregn din pris nu</a>
+        </div>
+    </section>
+
+    <!-- PRIS-BEREGNER -->
+    <section id="beregner" class="bg-slate-50 py-20">
+        <div class="max-w-xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10">Hvad koster dit tag?</h2>
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="laengde" class="block text-sm font-semibold text-slate-600 mb-2">Længde (meter)</label>
+                        <input id="laengde" type="number" min="0" step="0.1" placeholder="f.eks. 8" class="w-full border-2 border-slate-200 focus:border-blue-600 focus:outline-none rounded-lg text-xl p-4 transition">
+                    </div>
+                    <div>
+                        <label for="bredde" class="block text-sm font-semibold text-slate-600 mb-2">Bredde (meter)</label>
+                        <input id="bredde" type="number" min="0" step="0.1" placeholder="f.eks. 5" class="w-full border-2 border-slate-200 focus:border-blue-600 focus:outline-none rounded-lg text-xl p-4 transition">
+                    </div>
+                </div>
+
+                <div id="resultat" class="text-center py-6 hidden">
+                    <p class="text-slate-500 text-sm mb-1">Samlet pris (inkl. moms &amp; levering)</p>
+                    <p class="text-4xl md:text-5xl font-extrabold text-blue-600" id="pris">0 kr.</p>
+                    <p class="text-slate-400 text-sm mt-2" id="detaljer"></p>
+                </div>
+
+                <a id="tilbudBtn" href="#" class="block w-full text-center bg-blue-600 hover:bg-blue-700 transition text-white text-lg font-bold py-4 rounded-lg mt-4 opacity-50 pointer-events-none">Få uforpligtende tilbud</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- USP -->
+    <section class="py-20">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+                <div>
+                    <div class="text-5xl mb-4">🛡️</div>
+                    <h3 class="text-xl font-bold mb-2">Ingen samlinger</h3>
+                    <p class="text-slate-500">Ingen utætheder. Ét stort stykke EPDM folie skåret præcist til dit tag.</p>
+                </div>
+                <div>
+                    <div class="text-5xl mb-4">✅</div>
+                    <h3 class="text-xl font-bold mb-2">20 års garanti</h3>
+                    <p class="text-slate-500">Tysk kvalitetsprodukt med dokumenteret holdbarhed og fuld garanti.</p>
+                </div>
+                <div>
+                    <div class="text-5xl mb-4">🚚</div>
+                    <h3 class="text-xl font-bold mb-2">Levering 7-10 dage</h3>
+                    <p class="text-slate-500">Direkte til din byggeplads. Ingen fordyrende mellemled.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 text-sm py-10">
+        <div class="max-w-5xl mx-auto px-6 text-center space-y-1">
+            <p class="text-white font-semibold">Dansk EPDM Import</p>
+            <p>CVR: XX XX XX XX &nbsp;|&nbsp; Tlf: XX XX XX XX</p>
+        </div>
+    </footer>
+
+    <script>
+        const laengde = document.getElementById('laengde');
+        const bredde = document.getElementById('bredde');
+        const resultat = document.getElementById('resultat');
+        const prisEl = document.getElementById('pris');
+        const detaljer = document.getElementById('detaljer');
+        const tilbudBtn = document.getElementById('tilbudBtn');
+
+        function beregn() {
+            const l = parseFloat(laengde.value);
+            const b = parseFloat(bredde.value);
+            if (l > 0 && b > 0) {
+                const areal = l * b;
+                const foliePris = areal * 149;
+                const fragt = 500;
+                const total = foliePris + fragt;
+                prisEl.textContent = total.toLocaleString('da-DK') + ' kr.';
+                detaljer.textContent = areal.toFixed(1) + ' m² folie á 149 kr. + 500 kr. levering';
+                resultat.classList.remove('hidden');
+                tilbudBtn.classList.remove('opacity-50', 'pointer-events-none');
+                tilbudBtn.href = 'mailto:info@danskepdmimport.dk?subject='
+                    + encodeURIComponent('Forespørgsel på EPDM tagfolie')
+                    + '&body=' + encodeURIComponent(
+                        'Hej Dansk EPDM Import,\n\n'
+                        + 'Jeg vil gerne have et tilbud på EPDM tagfolie med følgende mål:\n\n'
+                        + 'Længde: ' + l + ' m\n'
+                        + 'Bredde: ' + b + ' m\n'
+                        + 'Areal: ' + areal.toFixed(1) + ' m²\n'
+                        + 'Beregnet pris: ' + total.toLocaleString('da-DK') + ' kr.\n\n'
+                        + 'Venlig hilsen'
+                    );
+            } else {
+                resultat.classList.add('hidden');
+                tilbudBtn.classList.add('opacity-50', 'pointer-events-none');
+                tilbudBtn.href = '#';
+            }
+        }
+
+        laengde.addEventListener('input', beregn);
+        bredde.addEventListener('input', beregn);
+    </script>
+</body>
+</html>
