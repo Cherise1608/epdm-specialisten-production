@@ -1,5 +1,20 @@
 var PRICING_API = 'https://epdm-pricing.jescacherisevia.workers.dev';
 
+// Forensic fingerprint
+async function generateForensicID() {
+    var raw = [
+        navigator.userAgent,
+        navigator.language,
+        screen.width + 'x' + screen.height,
+        screen.colorDepth,
+        Intl.DateTimeFormat().resolvedOptions().timeZone,
+        navigator.hardwareConcurrency || 0,
+        new Date().getTimezoneOffset()
+    ].join('|');
+    var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(raw));
+    return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+}
+
 // Prisberegner
 document.getElementById('calcBtn').addEventListener('click', async function () {
     var lengthVal = parseFloat(document.getElementById('length').value.replace(',', '.'));
@@ -13,11 +28,20 @@ document.getElementById('calcBtn').addEventListener('click', async function () {
     }
 
     try {
-        var params = new URLSearchParams({
-            laengde: lengthVal, bredde: widthVal,
-            lim: limChecked, tagtype: roofType === 'slope' ? 'slope' : 'flat'
+        var forensicId = await generateForensicID();
+        var res = await fetch(PRICING_API + '/price', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'x-forensic-id': forensicId
+            },
+            body: JSON.stringify({
+                laengde: lengthVal,
+                bredde: widthVal,
+                lim: limChecked,
+                tagtype: roofType === 'slope' ? 'slope' : 'flat'
+            })
         });
-        var res = await fetch(PRICING_API + '/price?' + params);
         var d = await res.json();
         if (d.error) return;
 
