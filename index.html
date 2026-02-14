@@ -20,7 +20,7 @@
     }
     </script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous">
 
@@ -453,9 +453,15 @@
             <h3 class="text-3xl serif-sharp font-bold mb-8">Privatlivspolitik</h3>
             <div class="space-y-6 text-sm text-slate-600 leading-relaxed font-sans">
                 <p><strong>1. Dataansvarlig</strong><br>Kasper Junget Ravn Hansen<br>Tagensvej 164, 4. th, 2200 København N<br>Email: kasper@epdm-specialisten.dk</p>
-                <p><strong>2. Hvilke data indsamler vi?</strong><br>Vi indsamler kun de oplysninger, der er strengt nødvendige for at behandle din forespørgsel og ordre: Navn, adresse, telefonnummer og e-mailadresse. Vi gemmer ikke følsomme personoplysninger.</p>
-                <p><strong>3. Cookies og Tracking</strong><br>Vi bruger IKKE tracking-cookies eller tredjeparts-analyseværktøjer (som Google Analytics) på denne hjemmeside. Derfor mødes du ikke af et cookie-banner. Vi bruger kun teknisk nødvendige cookies for at få hjemmesiden til at fungere.</p>
-                <p><strong>4. Videregivelse af data</strong><br>Dine oplysninger (adresse) videregives kun til vores leverandør (DWZ/fragtmand) med det ene formål at kunne levere varen til dig. Vi sælger aldrig dine data til tredjepart.</p>
+                <p><strong>2. Hvilke data indsamler vi?</strong><br>Vi indsamler kun de oplysninger, der er strengt nødvendige for at behandle din forespørgsel og ordre: Navn, adresse, telefonnummer og e-mailadresse.</p>
+                <p><strong>3. Funktionelle cookies og teknologier</strong><br>Med dit samtykke ("Accepter alle") anvender vi:</p>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li><strong>Geolokation:</strong> Din omtrentlige position bruges til at vise lokale vejrforhold, da EPDM-lim kræver bestemte temperaturer. Data sendes til vores Cloudflare Worker (EU edge) og gemmes ikke.</li>
+                    <li><strong>Enhedsfingerprint:</strong> En anonymiseret hash af basale enhedsoplysninger (browser, skærmstørrelse, tidszone) bruges til svindelforebyggelse ved prisberegning. Hashen kan ikke spores tilbage til dig personligt.</li>
+                    <li><strong>localStorage:</strong> Dit samtykkevalg gemmes lokalt i din browser (nøgle: <code>functionalConsent</code>). Der bruges ingen tredjeparts tracking-cookies.</li>
+                </ul>
+                <p>Vælger du "Kun nødvendige", fungerer prisberegneren uden vejrdata og fingerprint.</p>
+                <p><strong>4. Databehandling</strong><br>Alle API-kald behandles via Cloudflare Workers på europæiske edge-servere. Dine kontaktoplysninger videregives kun til vores leverandør (DWZ/fragtmand) med det ene formål at levere varen til dig.</p>
             </div>
             <div class="mt-12 pt-8 border-t border-slate-100 text-center">
                 <button onclick="closeModal('privacy-modal')" class="bg-black-custom text-white px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-black rounded-sm">Luk Vindue</button>
@@ -465,9 +471,10 @@
 
     <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-6 z-50 hidden border-t border-slate-700">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-            <p class="text-sm font-light text-slate-300">Vi bruger kun nødvendige cookies. Ingen tracking. <a href="#" onclick="openModal('privacy-modal'); return false;" class="underline text-white">Læs mere</a>.</p>
-            <div class="flex gap-4">
-                <button onclick="acceptCookies()" class="bg-white text-slate-900 px-6 py-2 text-xs font-bold uppercase tracking-widest hover:bg-slate-200 rounded-sm">OK</button>
+            <p class="text-sm font-light text-slate-300">Vi bruger funktionelle cookies til vejrdata og svindelforebyggelse. <a href="#" onclick="openModal('privacy-modal'); return false;" class="underline text-white">Læs mere</a>.</p>
+            <div class="flex gap-3">
+                <button onclick="acceptNecessary()" class="border border-slate-500 text-slate-300 px-6 py-2 text-xs font-bold uppercase tracking-widest hover:bg-slate-800 rounded-sm">Kun nødvendige</button>
+                <button onclick="acceptAll()" class="bg-white text-slate-900 px-6 py-2 text-xs font-bold uppercase tracking-widest hover:bg-slate-200 rounded-sm">Accepter alle</button>
             </div>
         </div>
     </div>

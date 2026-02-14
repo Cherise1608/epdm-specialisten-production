@@ -28,7 +28,8 @@ document.getElementById('calcBtn').addEventListener('click', async function () {
     }
 
     try {
-        var forensicId = await generateForensicID();
+        var hasFunctionalConsent = localStorage.getItem('functionalConsent') === 'true';
+        var forensicId = hasFunctionalConsent ? await generateForensicID() : 'anonymous';
         var res = await fetch(PRICING_API + '/price', {
             method: 'POST',
             headers: {
@@ -65,26 +66,32 @@ document.getElementById('calcBtn').addEventListener('click', async function () {
     }
 });
 
-// Vejr-widget (API key er nu server-side i Cloudflare Worker)
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(async function (pos) {
-        try {
-            var res = await fetch(
-                PRICING_API + '/weather?lat=' + pos.coords.latitude +
-                '&lon=' + pos.coords.longitude
-            );
-            var data = await res.json();
-            var temp = Math.ceil(data.main.temp);
-            var good = temp >= 5 && temp <= 25;
-            document.getElementById('weather-widget').classList.remove('hidden');
-            document.getElementById('weather-text').innerHTML = good
-                ? 'Perfekt installationsvejr: ' + temp + '°C i dit område.'
-                : 'Vejret kræver opmærksomhed: ' + temp + '°C.';
-            document.getElementById('weather-icon').className = good
-                ? 'fa-solid fa-sun text-2xl text-yellow-500 mt-1'
-                : 'fa-solid fa-cloud-rain text-2xl text-slate-400 mt-1';
-        } catch (e) { console.log('Vejrfejl'); }
-    });
+// Vejr-widget (only with functional consent)
+function loadWeather() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(async function (pos) {
+            try {
+                var res = await fetch(
+                    PRICING_API + '/weather?lat=' + pos.coords.latitude +
+                    '&lon=' + pos.coords.longitude
+                );
+                var data = await res.json();
+                var temp = Math.ceil(data.main.temp);
+                var good = temp >= 5 && temp <= 25;
+                document.getElementById('weather-widget').classList.remove('hidden');
+                document.getElementById('weather-text').innerHTML = good
+                    ? 'Perfekt installationsvejr: ' + temp + '°C i dit område.'
+                    : 'Vejret kræver opmærksomhed: ' + temp + '°C.';
+                document.getElementById('weather-icon').className = good
+                    ? 'fa-solid fa-sun text-2xl text-yellow-500 mt-1'
+                    : 'fa-solid fa-cloud-rain text-2xl text-slate-400 mt-1';
+            } catch (e) { console.log('Vejrfejl'); }
+        });
+    }
+}
+
+if (localStorage.getItem('functionalConsent') === 'true') {
+    loadWeather();
 }
 
 // Cookie-banner
@@ -92,9 +99,17 @@ if (!localStorage.getItem('cookieConsent')) {
     document.getElementById('cookie-banner').classList.remove('hidden');
 }
 
-function acceptCookies() {
+function acceptNecessary() {
     localStorage.setItem('cookieConsent', 'true');
+    localStorage.setItem('functionalConsent', 'false');
     document.getElementById('cookie-banner').classList.add('hidden');
+}
+
+function acceptAll() {
+    localStorage.setItem('cookieConsent', 'true');
+    localStorage.setItem('functionalConsent', 'true');
+    document.getElementById('cookie-banner').classList.add('hidden');
+    loadWeather();
 }
 
 // Send forespørgsel
