@@ -1,0 +1,14 @@
+# Cloudflare Worker (deploy via wrangler, not git)
+worker.js
+wrangler.toml
+.wrangler/
+
+# Environment
+.env
+.env.*
+*.pem
+*.key
+
+# System
+.DS_Store
+node_modules/

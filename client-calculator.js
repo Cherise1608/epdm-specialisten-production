@@ -65,14 +65,13 @@ document.getElementById('calcBtn').addEventListener('click', async function () {
     }
 });
 
-// Vejr-widget
-var weatherKey = '***REDACTED***';
+// Vejr-widget (API key er nu server-side i Cloudflare Worker)
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(async function (pos) {
         try {
             var res = await fetch(
-                'https://api.openweathermap.org/data/2.5/weather?lat=' + pos.coords.latitude +
-                '&lon=' + pos.coords.longitude + '&appid=' + weatherKey + '&units=metric&lang=da'
+                PRICING_API + '/weather?lat=' + pos.coords.latitude +
+                '&lon=' + pos.coords.longitude
             );
             var data = await res.json();
             var temp = Math.ceil(data.main.temp);
