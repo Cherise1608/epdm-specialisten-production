@@ -69,35 +69,42 @@
                 <div class="text-3xl md:text-4xl font-bold tracking-widest text-slate-900 uppercase font-sans mb-1">
                     EPDM SPECIALISTEN
                 </div>
-                <div class="text-[10px] md:text-xs text-slate-500 tracking-[0.3em] uppercase">
+                <div class="text-[10px] md:text-xs text-slate-500 tracking-[0.3em] uppercase" data-i18n="nav.subtitle">
                     Teknisk Rådgivning & Materialesalg
                 </div>
             </div>
             <div class="hidden md:flex gap-10 items-center mt-6 md:mt-0 pb-1">
-                <a href="#fordele" class="text-sm font-medium text-slate-900 hover:text-slate-600 transition-colors uppercase tracking-widest">Fordele</a>
-                <a href="#faq" class="text-sm font-medium text-slate-900 hover:text-slate-600 transition-colors uppercase tracking-widest">FAQ</a>
-                <a href="#beregner" class="text-sm font-bold text-white bg-black-custom px-6 py-3 hover:bg-slate-800 transition-colors uppercase tracking-widest text-xs btn-hover rounded-sm">Beregn Pris</a>
+                <a href="#fordele" class="text-sm font-medium text-slate-900 hover:text-slate-600 transition-colors uppercase tracking-widest" data-i18n="nav.fordele">Fordele</a>
+                <a href="#faq" class="text-sm font-medium text-slate-900 hover:text-slate-600 transition-colors uppercase tracking-widest" data-i18n="nav.faq">FAQ</a>
+                <a href="#beregner" class="text-sm font-bold text-white bg-black-custom px-6 py-3 hover:bg-slate-800 transition-colors uppercase tracking-widest text-xs btn-hover rounded-sm" data-i18n="nav.beregn">Beregn Pris</a>
+                <div class="flex items-center gap-1 text-sm font-medium uppercase tracking-widest">
+                    <button onclick="LanguageContext.setLanguage('da')" data-lang="da" class="text-slate-900 hover:text-slate-600 transition-colors cursor-pointer">DA</button>
+                    <span class="text-slate-300">|</span>
+                    <button onclick="LanguageContext.setLanguage('en')" data-lang="en" class="text-slate-500 hover:text-slate-600 transition-colors cursor-pointer">EN</button>
+                    <span class="text-slate-300">|</span>
+                    <button onclick="LanguageContext.setLanguage('de')" data-lang="de" class="text-slate-500 hover:text-slate-600 transition-colors cursor-pointer">DE</button>
+                </div>
             </div>
         </div>
     </nav>
 
     <header class="bg-hero py-24 md:py-36 text-center relative text-white">
         <div class="max-w-4xl mx-auto px-4 relative z-10">
-            <div class="inline-flex items-center gap-2 border border-white/30 px-5 py-2 rounded-full text-xs font-medium mb-12 uppercase tracking-[0.2em] text-white/90">
+            <div class="inline-flex items-center gap-2 border border-white/30 px-5 py-2 rounded-full text-xs font-medium mb-12 uppercase tracking-[0.2em] text-white/90" data-i18n="hero.badge">
                 Ingeniør-valideret Kvalitet
             </div>
             <h1 class="text-5xl md:text-7xl mb-8 leading-tight text-white serif-sharp">
-                Ingeniørens præcision.<br>
-                <span class="italic text-slate-400 font-light block mt-3">Tømrerens erfaring.</span>
+                <span data-i18n="hero.title1">Ingeniørens præcision.</span><br>
+                <span class="italic text-slate-400 font-light block mt-3" data-i18n="hero.title2">Tømrerens erfaring.</span>
             </h1>
-            <p class="text-lg md:text-xl text-slate-300 mb-16 max-w-2xl mx-auto leading-relaxed font-light font-sans">
+            <p class="text-lg md:text-xl text-slate-300 mb-16 max-w-2xl mx-auto leading-relaxed font-light font-sans" data-i18n="hero.desc">
                 Vi leverer præcisionsskåret tagfolie baseret på 20 års praktisk viden og tekniske DIN-standarder.
             </p>
             <div class="flex flex-col sm:flex-row gap-8 justify-center items-center">
-                <a href="#beregner" class="bg-black-custom text-white px-10 py-5 text-sm tracking-[0.2em] font-bold uppercase hover:bg-black transition-all min-w-[240px] border border-slate-700 shadow-2xl btn-hover rounded-sm">
+                <a href="#beregner" class="bg-black-custom text-white px-10 py-5 text-sm tracking-[0.2em] font-bold uppercase hover:bg-black transition-all min-w-[240px] border border-slate-700 shadow-2xl btn-hover rounded-sm" data-i18n="hero.cta">
                     Start Beregning
                 </a>
-                <div class="text-xs text-slate-400 tracking-widest uppercase mt-2 sm:mt-0 sm:ml-4 border-l border-slate-600 pl-6 py-2">
+                <div class="text-xs text-slate-400 tracking-widest uppercase mt-2 sm:mt-0 sm:ml-4 border-l border-slate-600 pl-6 py-2" data-i18n="hero.lifespan">
                     Forventet levetid: 50+ år
                 </div>
             </div>
@@ -107,7 +114,7 @@
     <section id="fordele" class="py-24 bg-white">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-24">
-                <h2 class="text-4xl text-slate-900 mb-6 serif-sharp">Derfor vælger ingeniører EPDM</h2>
+                <h2 class="text-4xl text-slate-900 mb-6 serif-sharp" data-i18n="fordele.title">Derfor vælger ingeniører EPDM</h2>
                 <div class="w-16 h-px bg-slate-200 mx-auto"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
@@ -115,22 +122,22 @@
                     <div class="w-16 h-16 bg-slate-100 text-slate-700 rounded-full flex items-center justify-center mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">Cut-to-Size Teknologi</h3>
-                    <p class="text-slate-600">Glem alt om utætte samlinger. Vi leverer <strong>én samlet dug</strong> skræddersyet til dit tag direkte fra fabrikken.</p>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2" data-i18n="fordele.card1.title">Cut-to-Size Teknologi</h3>
+                    <p class="text-slate-600" data-i18n-html="fordele.card1.desc">Glem alt om utætte samlinger. Vi leverer <strong>én samlet dug</strong> skræddersyet til dit tag direkte fra fabrikken.</p>
                 </div>
                 <div class="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-sm border border-slate-100">
                     <div class="w-16 h-16 bg-slate-100 text-slate-700 rounded-full flex items-center justify-center mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">Direkte fra Tyskland</h3>
-                    <p class="text-slate-600">Vi importerer direkte fra DWZ i Tyskland uden fordyrende mellemled. Du får professionel industrikvalitet.</p>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2" data-i18n="fordele.card2.title">Direkte fra Tyskland</h3>
+                    <p class="text-slate-600" data-i18n="fordele.card2.desc">Vi importerer direkte fra DWZ i Tyskland uden fordyrende mellemled. Du får professionel industrikvalitet.</p>
                 </div>
                 <div class="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-sm border border-slate-100">
                     <div class="w-16 h-16 bg-slate-100 text-slate-700 rounded-full flex items-center justify-center mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">+50 Års Levetid</h3>
-                    <p class="text-slate-600">Certificeret efter strenge tyske <strong>DIN EN 13956</strong> standarder. UV-bestandig og rod-fast gummi.</p>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2" data-i18n="fordele.card3.title">+50 Års Levetid</h3>
+                    <p class="text-slate-600" data-i18n-html="fordele.card3.desc">Certificeret efter strenge tyske <strong>DIN EN 13956</strong> standarder. UV-bestandig og rod-fast gummi.</p>
                 </div>
             </div>
         </div>
@@ -147,24 +154,24 @@
                             </div>
                             <h3 class="font-bold text-lg tracking-[0.2em] uppercase mb-4 text-slate-900 font-sans">EPDM SPECIALISTEN</h3>
                             <div class="w-10 h-0.5 bg-slate-900 mx-auto my-5"></div>
-                            <p class="text-[10px] text-slate-500 uppercase tracking-widest leading-relaxed font-bold">Teknisk Rådgivning<br>& Materialesalg</p>
+                            <p class="text-[10px] text-slate-500 uppercase tracking-widest leading-relaxed font-bold" data-i18n-html="about.circle.subtitle">Teknisk Rådgivning<br>& Materialesalg</p>
                         </div>
                         <div class="absolute -bottom-0 -right-0 bg-black-custom text-white w-28 h-28 rounded-full flex items-center justify-center flex-col shadow-2xl border-4 border-white">
                             <span class="text-4xl font-bold serif-sharp pt-2">20</span>
-                            <span class="text-[9px] uppercase tracking-wider font-bold mb-1">Års Viden</span>
+                            <span class="text-[9px] uppercase tracking-wider font-bold mb-1" data-i18n="about.years">Års Viden</span>
                         </div>
                     </div>
                 </div>
                 <div class="order-1 md:order-2">
-                    <h2 class="text-3xl text-slate-900 mb-6 serif-sharp">
+                    <h2 class="text-3xl text-slate-900 mb-6 serif-sharp" data-i18n="about.title">
                         Holdbarhed gennem dokumentation
                     </h2>
-                    <p class="text-sm text-slate-600 leading-relaxed mb-8">
+                    <p class="text-sm text-slate-600 leading-relaxed mb-8" data-i18n="about.quote">
                         "Jeg har brugt 20 år på at forstå, hvorfor tage fejler. Hos EPDM Specialisten fjerner jeg fejlkilderne ved at levere en løsning skåret på præcise fabriksmål."
                     </p>
                     <p class="text-sm font-bold text-slate-900 flex items-center gap-4">
                         <span class="w-12 h-px bg-slate-900"></span>
-                        Kasper Hansen, Bygningsingeniør & Tømrer
+                        <span data-i18n="about.credit">Kasper Hansen, Bygningsingeniør & Tømrer</span>
                     </p>
                 </div>
             </div>
@@ -173,15 +180,15 @@
 
     <section id="faq" class="py-24 bg-white">
         <div class="max-w-3xl mx-auto px-4">
-            <h2 class="text-3xl text-center text-slate-900 mb-16 serif-sharp">Ofte stillede spørgsmål</h2>
+            <h2 class="text-3xl text-center text-slate-900 mb-16 serif-sharp" data-i18n="faq.title">Ofte stillede spørgsmål</h2>
             <div class="space-y-4">
 
                 <details class="group border-b border-slate-200 pb-4">
                     <summary class="flex justify-between items-center cursor-pointer list-none py-4 text-slate-900 hover:text-slate-600 transition-colors">
-                        <span class="uppercase tracking-wide text-sm font-bold">Hvor meget koster det?</span>
+                        <span class="uppercase tracking-wide text-sm font-bold" data-i18n="faq.q1">Hvor meget koster det?</span>
                         <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
                     </summary>
-                    <div class="text-slate-600 text-sm leading-relaxed mt-2 pl-4 border-l-2 border-slate-100">
+                    <div class="text-slate-600 text-sm leading-relaxed mt-2 pl-4 border-l-2 border-slate-100" data-i18n-html="faq.a1">
                         <p class="mb-2">Priserne varierer efter tagstørrelse. Som udgangspunkt starter vores EPDM folie ved <strong>195 kr./m²</strong> (ekskl. systempakke).</p>
                         <p>Brug vores prisberegner nedenfor for et præcist estimat inkl. lim, primer og fragt. Endelig tilbud fremsendes altid skriftligt.</p>
                     </div>
@@ -189,10 +196,10 @@
 
                 <details class="group border-b border-slate-200 pb-4">
                     <summary class="flex justify-between items-center cursor-pointer list-none py-4 text-slate-900 hover:text-slate-600 transition-colors">
-                        <span class="uppercase tracking-wide text-sm font-bold">Hvad er forskellen på EPDM og tagpap?</span>
+                        <span class="uppercase tracking-wide text-sm font-bold" data-i18n="faq.q2">Hvad er forskellen på EPDM og tagpap?</span>
                         <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
                     </summary>
-                    <div class="text-slate-600 text-sm leading-relaxed mt-2 pl-4 border-l-2 border-slate-100">
+                    <div class="text-slate-600 text-sm leading-relaxed mt-2 pl-4 border-l-2 border-slate-100" data-i18n-html="faq.a2">
                         <p class="mb-2"><strong>EPDM</strong> er en gummimembran med +50 års dokumenteret levetid, der leveres i ét stykke uden samlinger. Det er UV-resistent og kræver ingen åben ild ved montering.</p>
                         <p><strong>Tagpap</strong> holder typisk 15-25 år og kræver svejsning med gasbrænder. EPDM er en dyrere investering nu, men billigere over tid grundet levetiden.</p>
                     </div>
@@ -200,10 +207,10 @@
 
                 <details class="group border-b border-slate-200 pb-4">
                     <summary class="flex justify-between items-center cursor-pointer list-none py-4 text-slate-900 hover:text-slate-600 transition-colors">
-                        <span class="uppercase tracking-wide text-sm font-bold">Udfører I også tømrerarbejde?</span>
+                        <span class="uppercase tracking-wide text-sm font-bold" data-i18n="faq.q3">Udfører I også tømrerarbejde?</span>
                         <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
                     </summary>
-                    <div class="text-slate-600 text-sm leading-relaxed mt-2 pl-4 border-l-2 border-slate-100">
+                    <div class="text-slate-600 text-sm leading-relaxed mt-2 pl-4 border-l-2 border-slate-100" data-i18n-html="faq.a3">
                         <p class="mb-3"><strong>Ja, i høj grad.</strong> Kasper er faglært tømrer med en baggrund i krævende renoveringsprojekter.</p>
                         <p class="mb-2">Vi har erfaring med alt fra tunge konstruktioner til fint snedkerarbejde, herunder:</p>
                         <ul class="list-disc pl-4 mb-3 space-y-1">
@@ -217,30 +224,30 @@
 
                 <details class="group border-b border-slate-200 pb-4">
                     <summary class="flex justify-between items-center cursor-pointer list-none py-4 text-slate-900 hover:text-slate-600 transition-colors">
-                        <span class="uppercase tracking-wide text-sm font-bold">Kan jeg selv montere EPDM-dugen?</span>
+                        <span class="uppercase tracking-wide text-sm font-bold" data-i18n="faq.q4">Kan jeg selv montere EPDM-dugen?</span>
                         <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
                     </summary>
-                    <div class="text-slate-600 text-sm leading-relaxed mt-2 pl-4 border-l-2 border-slate-100">
+                    <div class="text-slate-600 text-sm leading-relaxed mt-2 pl-4 border-l-2 border-slate-100" data-i18n="faq.a4">
                         <p>Ja, det er muligt for den erfarne gør-det-selv person. Fordelen ved vores løsning er, at du modtager dugen i ét stykke, hvilket fjerner behovet for at svejse samlinger på taget. Vi anbefaler dog altid, at du følger vores installationsvejledning nøje for at sikre garantien.</p>
                     </div>
                 </details>
 
                 <details class="group border-b border-slate-200 pb-4">
                     <summary class="flex justify-between items-center cursor-pointer list-none py-4 text-slate-900 hover:text-slate-600 transition-colors">
-                        <span class="uppercase tracking-wide text-sm font-bold">Hvad er leveringstiden?</span>
+                        <span class="uppercase tracking-wide text-sm font-bold" data-i18n="faq.q5">Hvad er leveringstiden?</span>
                         <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
                     </summary>
-                    <div class="text-slate-600 text-sm leading-relaxed mt-2 pl-4 border-l-2 border-slate-100">
+                    <div class="text-slate-600 text-sm leading-relaxed mt-2 pl-4 border-l-2 border-slate-100" data-i18n-html="faq.a5">
                         <p>Da vi skærer på mål direkte fra fabrikken i Tyskland, skal du forvente ca. <strong>5-8 hverdage</strong> fra bestilling til levering på din adresse i Danmark.</p>
                     </div>
                 </details>
 
                 <details class="group border-b border-slate-200 pb-4">
                     <summary class="flex justify-between items-center cursor-pointer list-none py-4 text-slate-900 hover:text-slate-600 transition-colors">
-                        <span class="uppercase tracking-wide text-sm font-bold">Tilbyder I garanti?</span>
+                        <span class="uppercase tracking-wide text-sm font-bold" data-i18n="faq.q6">Tilbyder I garanti?</span>
                         <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
                     </summary>
-                    <div class="text-slate-600 text-sm leading-relaxed mt-2 pl-4 border-l-2 border-slate-100">
+                    <div class="text-slate-600 text-sm leading-relaxed mt-2 pl-4 border-l-2 border-slate-100" data-i18n-html="faq.a6">
                         <p><strong>Ja. Vi giver fuld tryghed.</strong></p>
                         <p class="mb-2">Du får fabriksgaranti på materialet. Men vigtigst af alt: EPDM-gummi nedbrydes ikke af solen som tagpap gør. Derfor viser tekniske tests (SKZ), at levetiden er over <strong>50 år</strong>.</p>
                         <p>Du køber altså et tag, der holder længere, end garantien løber.</p>
@@ -249,10 +256,10 @@
 
                 <details class="group border-b border-slate-200 pb-4">
                     <summary class="flex justify-between items-center cursor-pointer list-none py-4 text-slate-900 hover:text-slate-600 transition-colors">
-                        <span class="uppercase tracking-wide text-sm font-bold">Kan EPDM lægges ovenpå mit gamle tag?</span>
+                        <span class="uppercase tracking-wide text-sm font-bold" data-i18n="faq.q7">Kan EPDM lægges ovenpå mit gamle tag?</span>
                         <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
                     </summary>
-                    <div class="text-slate-600 text-sm leading-relaxed mt-2 pl-4 border-l-2 border-slate-100">
+                    <div class="text-slate-600 text-sm leading-relaxed mt-2 pl-4 border-l-2 border-slate-100" data-i18n="faq.a7">
                         <p>EPDM kan ofte lægges ovenpå eksisterende tagpap eller beton, forudsat at underlaget er jævnt, tørt og fri for skarpe genstande. Vi anbefaler dog altid en besigtigelse eller at sende os billeder før bestilling.</p>
                     </div>
                 </details>
@@ -264,22 +271,22 @@
     <section id="beregner" class="py-24 bg-slate-50 border-t border-slate-200">
         <div class="max-w-2xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-slate-900 mb-4 serif-sharp">Beregn din pris</h2>
-                <p class="text-xs text-slate-700 uppercase tracking-widest font-sans">Vi inkluderer automatisk 20cm sikkerhedsoverlæg i beregningen</p>
+                <h2 class="text-3xl font-bold text-slate-900 mb-4 serif-sharp" data-i18n="calc.title">Beregn din pris</h2>
+                <p class="text-xs text-slate-700 uppercase tracking-widest font-sans" data-i18n="calc.subtitle">Vi inkluderer automatisk 20cm sikkerhedsoverlæg i beregningen</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                 <div class="flex items-start bg-white p-6 rounded-sm border border-slate-100 shadow-sm">
                     <div>
-                        <h4 class="font-bold text-slate-900 uppercase tracking-wide text-sm mb-2 font-sans">Fladt tag (0-2,5°)</h4>
-                        <p class="text-slate-700 text-sm leading-relaxed font-sans">Standardløsning til carporte og skure. Her beregner vi med de rene mål + 20 cm overlæg på alle sider.</p>
+                        <h4 class="font-bold text-slate-900 uppercase tracking-wide text-sm mb-2 font-sans" data-i18n="calc.flat.title">Fladt tag (0-2,5°)</h4>
+                        <p class="text-slate-700 text-sm leading-relaxed font-sans" data-i18n="calc.flat.desc">Standardløsning til carporte og skure. Her beregner vi med de rene mål + 20 cm overlæg på alle sider.</p>
                     </div>
                 </div>
 
                 <div class="flex items-start bg-white p-6 rounded-sm border border-slate-100 shadow-sm">
                     <div>
-                        <h4 class="font-bold text-slate-900 uppercase tracking-wide text-sm mb-2 font-sans">Tag med fald (>2,5°)</h4>
-                        <p class="text-slate-700 text-sm leading-relaxed font-sans">Ved fald tilføjes en faktor 1.15x i beregningen for at sikre, at gummimembranen dækker den ekstra flade, som hældningen skaber.</p>
+                        <h4 class="font-bold text-slate-900 uppercase tracking-wide text-sm mb-2 font-sans" data-i18n="calc.slope.title">Tag med fald (>2,5°)</h4>
+                        <p class="text-slate-700 text-sm leading-relaxed font-sans" data-i18n="calc.slope.desc">Ved fald tilføjes en faktor 1.15x i beregningen for at sikre, at gummimembranen dækker den ekstra flade, som hældningen skaber.</p>
                     </div>
                 </div>
             </div>
@@ -288,46 +295,46 @@
                 <form id="calculator-form" class="space-y-12">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                         <div class="group">
-                            <label class="block text-[10px] font-bold text-slate-700 uppercase tracking-widest mb-4 font-sans">Længde (meter)</label>
+                            <label class="block text-[10px] font-bold text-slate-700 uppercase tracking-widest mb-4 font-sans" data-i18n="calc.length">Længde (meter)</label>
                             <input type="number" id="length" step="0.01" class="w-full pb-2 text-center text-4xl font-light text-slate-900 border-b border-slate-200 focus:border-slate-900 bg-transparent placeholder-slate-200 transition-colors" placeholder="0.00">
                         </div>
                         <div class="group">
-                            <label class="block text-[10px] font-bold text-slate-700 uppercase tracking-widest mb-4 font-sans">Bredde (meter)</label>
+                            <label class="block text-[10px] font-bold text-slate-700 uppercase tracking-widest mb-4 font-sans" data-i18n="calc.width">Bredde (meter)</label>
                             <input type="number" id="width" step="0.01" class="w-full pb-2 text-center text-4xl font-light text-slate-900 border-b border-slate-200 focus:border-slate-900 bg-transparent placeholder-slate-200 transition-colors" placeholder="0.00">
                         </div>
                     </div>
 
                     <div class="group text-center">
-                        <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4 font-sans">Tagtype</label>
+                        <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4 font-sans" data-i18n="calc.rooftype">Tagtype</label>
                         <select id="roofType" class="w-full md:w-1/2 mx-auto pb-2 text-center text-xl font-light text-slate-900 border-b border-slate-200 focus:border-slate-900 bg-transparent cursor-pointer transition-colors">
-                            <option value="flat">Fladt tag</option>
-                            <option value="slope">Skråt tag (Merpris)</option>
+                            <option value="flat" data-i18n="calc.flat.option">Fladt tag</option>
+                            <option value="slope" data-i18n="calc.slope.option">Skråt tag (Merpris)</option>
                         </select>
                     </div>
 
                     <div id="discount-badge" class="hidden text-center">
-                        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Stor-købs rabat aktiveret (-7%)</span>
+                        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest" data-i18n="calc.discount">Stor-købs rabat aktiveret (-7%)</span>
                     </div>
 
                     <div class="flex justify-center">
                         <label class="flex items-center space-x-4 cursor-pointer p-4 hover:bg-slate-50 transition-colors group w-full justify-center border border-transparent hover:border-slate-100">
                             <input type="checkbox" id="limPakke" class="cursor-pointer border-slate-300 accent-slate-900">
                             <div class="text-left">
-                                <span class="block text-sm font-bold text-slate-900 uppercase tracking-wide group-hover:text-black">Inkluder Systempakke (+65 kr/m²)</span>
-                                <span class="text-xs text-slate-500 font-sans">Indeholder lim & primer tilpasset mængden</span>
+                                <span class="block text-sm font-bold text-slate-900 uppercase tracking-wide group-hover:text-black" data-i18n="calc.syspackage">Inkluder Systempakke (+65 kr/m²)</span>
+                                <span class="text-xs text-slate-500 font-sans" data-i18n="calc.syspackage.desc">Indeholder lim & primer tilpasset mængden</span>
                             </div>
                         </label>
                     </div>
 
                     <div>
-                        <button type="button" id="calcBtn" class="w-full bg-black-custom text-white py-5 text-sm font-bold uppercase tracking-[0.2em] hover:bg-black transition-all shadow-xl btn-hover rounded-sm">
+                        <button type="button" id="calcBtn" class="w-full bg-black-custom text-white py-5 text-sm font-bold uppercase tracking-[0.2em] hover:bg-black transition-all shadow-xl btn-hover rounded-sm" data-i18n="calc.btn">
                             Beregn Pris Nu
                         </button>
                     </div>
                 </form>
 
                 <div id="result" class="hidden mt-16 text-center border-t border-slate-100 pt-12 animate-fade-in">
-                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-6 font-sans">Estimeret pris inkl. moms & systempakke</p>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-6 font-sans" data-i18n="calc.result.label">Estimeret pris inkl. moms & systempakke</p>
 
                     <div class="text-6xl text-slate-900 mb-8 serif-sharp" id="total-price">0 kr.</div>
 
@@ -335,27 +342,27 @@
 
                     <div class="text-left space-y-6 bg-slate-50 p-8 border border-slate-100 rounded-sm">
                         <div class="text-center mb-6">
-                            <h3 class="text-lg serif-sharp text-slate-900">Modtag tilbud</h3>
-                            <p class="text-xs text-slate-500 mt-2">Vi sender specifikationen til din mail</p>
+                            <h3 class="text-lg serif-sharp text-slate-900" data-i18n="calc.offer.title">Modtag tilbud</h3>
+                            <p class="text-xs text-slate-500 mt-2" data-i18n="calc.offer.desc">Vi sender specifikationen til din mail</p>
                         </div>
 
                         <div class="space-y-4">
-                            <input type="text" id="navn" placeholder="Navn" class="w-full bg-white border-b border-slate-200 p-3 text-sm focus:border-slate-900 transition-colors">
+                            <input type="text" id="navn" placeholder="Navn" data-i18n-placeholder="calc.offer.name" class="w-full bg-white border-b border-slate-200 p-3 text-sm focus:border-slate-900 transition-colors">
                             <div class="grid grid-cols-2 gap-4">
-                                <input type="tel" id="tlf" placeholder="Telefon" class="w-full bg-white border-b border-slate-200 p-3 text-sm focus:border-slate-900 transition-colors">
-                                <input type="email" id="email" placeholder="Email" class="w-full bg-white border-b border-slate-200 p-3 text-sm focus:border-slate-900 transition-colors">
+                                <input type="tel" id="tlf" placeholder="Telefon" data-i18n-placeholder="calc.offer.phone" class="w-full bg-white border-b border-slate-200 p-3 text-sm focus:border-slate-900 transition-colors">
+                                <input type="email" id="email" placeholder="Email" data-i18n-placeholder="calc.offer.email" class="w-full bg-white border-b border-slate-200 p-3 text-sm focus:border-slate-900 transition-colors">
                             </div>
-                            <input type="text" id="adresse" placeholder="Leveringsadresse" class="w-full bg-white border-b border-slate-200 p-3 text-sm focus:border-slate-900 transition-colors">
+                            <input type="text" id="adresse" placeholder="Leveringsadresse" data-i18n-placeholder="calc.offer.address" class="w-full bg-white border-b border-slate-200 p-3 text-sm focus:border-slate-900 transition-colors">
                         </div>
 
                         <div class="flex items-start gap-3 mt-6">
                             <input type="checkbox" id="accept" class="mt-1 accent-slate-900">
-                            <label for="accept" class="text-xs text-slate-500 leading-snug cursor-pointer font-sans">
+                            <label for="accept" class="text-xs text-slate-500 leading-snug cursor-pointer font-sans" data-i18n="calc.offer.accept">
                                 Jeg accepterer handelsbetingelserne. Bemærk: Målvarer (Cut-to-size) er ikke omfattet af standard returret.
                             </label>
                         </div>
 
-                        <a href="#" onclick="sendEmail(event)" class="block w-full bg-black-custom text-white text-center py-4 text-xs font-bold uppercase tracking-widest hover:bg-black transition-all mt-6 btn-hover rounded-sm">
+                        <a href="#" onclick="sendEmail(event)" class="block w-full bg-black-custom text-white text-center py-4 text-xs font-bold uppercase tracking-widest hover:bg-black transition-all mt-6 btn-hover rounded-sm" data-i18n="calc.offer.send">
                             Send Forespørgsel
                         </a>
                     </div>
@@ -369,29 +376,29 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
 
                 <div>
-                    <h2 class="text-3xl text-slate-900 mb-6 serif-sharp">Ingeniør-valideret sikkerhed</h2>
-                    <p class="text-sm text-slate-600 leading-relaxed mb-8">
+                    <h2 class="text-3xl text-slate-900 mb-6 serif-sharp" data-i18n="eng.title">Ingeniør-valideret sikkerhed</h2>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-8" data-i18n="eng.desc">
                         I en branche præget af hurtige løsninger, vælger vi dokumentation. Vi kombinerer tysk ingeniørkunst med dansk håndværkertradition.
                     </p>
 
                     <div class="grid grid-cols-2 gap-6">
                         <div class="border border-slate-200 p-6 text-center hover:border-slate-900 transition-colors group">
                             <i class="fa-solid fa-certificate text-3xl text-slate-300 mb-4 group-hover:text-slate-900 transition-colors"></i>
-                            <h4 class="font-bold text-sm uppercase tracking-wider mb-2">DIN EN 13956</h4>
-                            <p class="text-xs text-slate-500">Officiel tysk industristandard for EPDM-gummi.</p>
+                            <h4 class="font-bold text-sm uppercase tracking-wider mb-2" data-i18n="eng.din.title">DIN EN 13956</h4>
+                            <p class="text-xs text-slate-500" data-i18n="eng.din.desc">Officiel tysk industristandard for EPDM-gummi.</p>
                         </div>
 
                         <div class="border border-slate-200 p-6 text-center hover:border-slate-900 transition-colors group">
                             <i class="fa-solid fa-shield-halved text-3xl text-slate-300 mb-4 group-hover:text-slate-900 transition-colors"></i>
-                            <h4 class="font-bold text-sm uppercase tracking-wider mb-2">50 Års Levetid</h4>
-                            <p class="text-xs text-slate-500">Dokumenteret holdbarhed gennem SKZ-testinstituttet.</p>
+                            <h4 class="font-bold text-sm uppercase tracking-wider mb-2" data-i18n="eng.life.title">50 Års Levetid</h4>
+                            <p class="text-xs text-slate-500" data-i18n="eng.life.desc">Dokumenteret holdbarhed gennem SKZ-testinstituttet.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-slate-50 px-10 pb-10 border-l-4 border-slate-900 h-full">
-                    <h3 class="text-3xl text-slate-900 mb-6 serif-sharp">Mød EPDM Specialisten</h3>
-                    <p class="text-sm text-slate-600 leading-relaxed mb-8">
+                    <h3 class="text-3xl text-slate-900 mb-6 serif-sharp" data-i18n="meet.title">Mød EPDM Specialisten</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-8" data-i18n-html="meet.bio">
                         "Jeg er uddannet <strong>Bygningsingeniør</strong> og faglært <strong>Tømrer</strong>. Den kombination er din sikkerhed. Jeg forstår både kemien i gummiet og konstruktionen i dit tag. Jeg sælger ikke bare en rulle folie – jeg sælger visheden om, at dit tag holder tæt, når stormen rammer."
                     </p>
 
@@ -399,7 +406,7 @@
                         <div class="w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center font-serif font-bold text-slate-400">K</div>
                         <div>
                             <p class="text-sm font-bold text-slate-900">Kasper Junget Ravn Hansen</p>
-                            <p class="text-xs text-slate-500 uppercase tracking-wider">Ejer & Grundlægger</p>
+                            <p class="text-xs text-slate-500 uppercase tracking-wider" data-i18n="meet.owner">Ejer & Grundlægger</p>
                         </div>
                     </div>
                 </div>
@@ -423,10 +430,10 @@
                 </div>
                 <div></div>
                 <div class="md:text-right">
-                    <h4 class="serif-sharp font-bold text-xl mb-8 tracking-wide">Information</h4>
+                    <h4 class="serif-sharp font-bold text-xl mb-8 tracking-wide" data-i18n="footer.info">Information</h4>
                     <ul class="space-y-4 text-slate-400 text-xs uppercase tracking-widest">
-                        <li><a href="#" onclick="openModal('terms-modal'); return false;" class="hover:text-white border-b border-transparent hover:border-white transition-colors pb-1">Handelsbetingelser</a></li>
-                        <li><a href="#" onclick="openModal('privacy-modal'); return false;" class="hover:text-white border-b border-transparent hover:border-white transition-colors pb-1">Privatlivspolitik</a></li>
+                        <li><a href="#" onclick="openModal('terms-modal'); return false;" class="hover:text-white border-b border-transparent hover:border-white transition-colors pb-1" data-i18n="footer.terms">Handelsbetingelser</a></li>
+                        <li><a href="#" onclick="openModal('privacy-modal'); return false;" class="hover:text-white border-b border-transparent hover:border-white transition-colors pb-1" data-i18n="footer.privacy">Privatlivspolitik</a></li>
                     </ul>
                 </div>
             </div>
@@ -436,7 +443,7 @@
     <div id="terms-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm">
         <div class="bg-white text-slate-900 w-full max-w-2xl max-h-[80vh] overflow-y-auto shadow-2xl relative border border-slate-200 rounded-sm p-12 md:p-16">
             <button onclick="closeModal('terms-modal')" class="absolute top-6 right-6 text-slate-400 hover:text-black text-2xl">&times;</button>
-            <h3 class="text-3xl serif-sharp font-bold mb-8">Handelsbetingelser</h3>
+            <h3 class="text-3xl serif-sharp font-bold mb-8" data-i18n="modal.terms.title">Handelsbetingelser</h3>
             <div class="space-y-6 text-sm text-slate-600 leading-relaxed font-sans">
                 <p><strong>1. Generelt</strong><br>Disse betingelser gælder for alle køb foretaget hos EPDM Specialisten v/ Kasper Junget Ravn Hansen. Vi leverer primært til private (B2C) og erhverv (B2B) i Danmark.</p>
                 <p><strong>2. Bestilling og Betaling</strong><br>Da alle vores produkter er specialfremstillede (Cut-to-size), produceres ordren først, når betaling er modtaget. Betaling foregår via faktura/bankoverførsel. Betalingsfrist er 7 dage netto. Ved manglende betaling annulleres ordren.</p>
@@ -445,7 +452,7 @@
                 <p><strong>5. Garanti</strong><br>Vi viderestiller producentens (DWZ) materialegaranti på op til 50 år, forudsat at materialet er monteret korrekt efter gældende forskrifter. EPDM Specialisten hæfter ikke for følgeskader som følge af forkert installation.</p>
             </div>
             <div class="mt-12 pt-8 border-t border-slate-100 text-center">
-                <button onclick="closeModal('terms-modal')" class="bg-black-custom text-white px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-black rounded-sm">Luk Vindue</button>
+                <button onclick="closeModal('terms-modal')" class="bg-black-custom text-white px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-black rounded-sm" data-i18n="modal.terms.close">Luk Vindue</button>
             </div>
         </div>
     </div>
@@ -453,7 +460,7 @@
     <div id="privacy-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm">
         <div class="bg-white text-slate-900 w-full max-w-2xl max-h-[80vh] overflow-y-auto shadow-2xl relative border border-slate-200 rounded-sm p-12 md:p-16">
             <button onclick="closeModal('privacy-modal')" class="absolute top-6 right-6 text-slate-400 hover:text-black text-2xl">&times;</button>
-            <h3 class="text-3xl serif-sharp font-bold mb-8">Privatlivspolitik</h3>
+            <h3 class="text-3xl serif-sharp font-bold mb-8" data-i18n="modal.privacy.title">Privatlivspolitik</h3>
             <div class="space-y-6 text-sm text-slate-600 leading-relaxed font-sans">
                 <p><strong>1. Dataansvarlig</strong><br>Kasper Junget Ravn Hansen<br>Tagensvej 164, 4. th, 2200 København N<br>Email: info@epdm-specialisten.dk</p>
                 <p><strong>2. Hvilke data indsamler vi?</strong><br>Vi indsamler kun de oplysninger, der er strengt nødvendige for at behandle din forespørgsel og ordre: Navn, adresse, telefonnummer og e-mailadresse.</p>
@@ -466,21 +473,22 @@
                 <p><strong>4. Databehandling</strong><br>Alle API-kald behandles via Cloudflare Workers på europæiske edge-servere. Dine kontaktoplysninger videregives kun til vores leverandør (DWZ/fragtmand) med det ene formål at levere varen til dig.</p>
             </div>
             <div class="mt-12 pt-8 border-t border-slate-100 text-center">
-                <button onclick="closeModal('privacy-modal')" class="bg-black-custom text-white px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-black rounded-sm">Luk Vindue</button>
+                <button onclick="closeModal('privacy-modal')" class="bg-black-custom text-white px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-black rounded-sm" data-i18n="modal.privacy.close">Luk Vindue</button>
             </div>
         </div>
     </div>
 
     <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-6 z-50 hidden border-t border-slate-700">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-            <p class="text-sm font-light text-slate-300">Vi bruger funktionelle cookies til svindelforebyggelse. <a href="#" onclick="openModal('privacy-modal'); return false;" class="underline text-white">Læs mere</a>.</p>
+            <p class="text-sm font-light text-slate-300"><span data-i18n="cookie.text">Vi bruger funktionelle cookies til svindelforebyggelse.</span> <a href="#" onclick="openModal('privacy-modal'); return false;" class="underline text-white" data-i18n="cookie.readmore">Læs mere</a>.</p>
             <div class="flex gap-3">
-                <button onclick="acceptNecessary()" class="border border-slate-500 text-slate-300 px-6 py-2 text-xs font-bold uppercase tracking-widest hover:bg-slate-800 rounded-sm">Kun nødvendige</button>
-                <button onclick="acceptAll()" class="bg-white text-slate-900 px-6 py-2 text-xs font-bold uppercase tracking-widest hover:bg-slate-200 rounded-sm">Accepter alle</button>
+                <button onclick="acceptNecessary()" class="border border-slate-500 text-slate-300 px-6 py-2 text-xs font-bold uppercase tracking-widest hover:bg-slate-800 rounded-sm" data-i18n="cookie.necessary">Kun nødvendige</button>
+                <button onclick="acceptAll()" class="bg-white text-slate-900 px-6 py-2 text-xs font-bold uppercase tracking-widest hover:bg-slate-200 rounded-sm" data-i18n="cookie.accept">Accepter alle</button>
             </div>
         </div>
     </div>
 
+    <script src="translations.js"></script>
     <script src="client-calculator.js"></script>
 
 </body>

@@ -23,7 +23,7 @@ document.getElementById('calcBtn').addEventListener('click', async function () {
     var limChecked = document.getElementById('limPakke').checked;
 
     if (!lengthVal || !widthVal || lengthVal < 0 || widthVal < 0) {
-        alert('Indtast venligst gyldige mål for både længde og bredde.');
+        alert(LanguageContext.t('alert.invalid_dims'));
         return;
     }
 
@@ -55,14 +55,14 @@ document.getElementById('calcBtn').addEventListener('click', async function () {
         document.getElementById('total-price').innerText =
             Math.ceil(d.total).toLocaleString('da-DK') + ' kr.';
         document.getElementById('dimensions-display').innerText =
-            'Dine mål: ' + lengthVal + 'm x ' + widthVal +
-            'm. Produktionsmål (inkl. 20cm overlæg): ' + d.prodLaengde.toFixed(2) +
+            LanguageContext.t('calc.dims_prefix') + lengthVal + 'm x ' + widthVal +
+            'm' + LanguageContext.t('calc.dims_prod') + d.prodLaengde.toFixed(2) +
             'm x ' + d.prodBredde.toFixed(2) + 'm (' + d.areal.toFixed(2) + ' m²).';
 
         document.getElementById('result').classList.remove('hidden');
         document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
     } catch (e) {
-        alert('Der opstod en fejl. Prøv igen.');
+        alert(LanguageContext.t('alert.error'));
     }
 });
 
@@ -95,15 +95,15 @@ function sendEmail(e) {
     var dims = document.getElementById('dimensions-display').innerText;
 
     if (!navn || !tlf || !email || !accepted) {
-        alert('Udfyld venligst alle kontaktfelter.');
+        alert(LanguageContext.t('alert.fill_fields'));
         return;
     }
 
-    var subject = encodeURIComponent('Tilbud forespørgsel: ' + navn);
+    var subject = encodeURIComponent(LanguageContext.t('email.subject') + navn);
     var body = encodeURIComponent(
-        'Hej EPDM Specialisten,\r\n\r\nJeg ønsker et tilbud på følgende:\r\n' +
-        dims + '\r\nEstimeret Pris: ' + pris +
-        '\r\n\r\nKontaktinfo:\r\nNavn: ' + navn +
+        LanguageContext.t('email.body') +
+        dims + LanguageContext.t('email.price') + pris +
+        LanguageContext.t('email.contact') + navn +
         '\r\nTlf: ' + tlf + '\r\nEmail: ' + email +
         '\r\nAdresse: ' + adresse
     );
