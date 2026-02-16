@@ -36,6 +36,21 @@ var LanguageContext = (function () {
         'fordele.card3.title': { da: '+50 Års Levetid', en: '+50 Years Lifespan', de: '+50 Jahre Lebensdauer' },
         'fordele.card3.desc':  { da: 'Certificeret efter strenge tyske <strong>DIN EN 13956</strong> standarder. UV-bestandig og rod-fast gummi.', en: 'Certified according to strict German <strong>DIN EN 13956</strong> standards. UV-resistant and root-proof rubber.', de: 'Zertifiziert nach strengen deutschen <strong>DIN EN 13956</strong> Standards. UV-beständig und wurzelfester Gummi.' },
 
+        // ── Roof Type Guide section ────────────────────────────────────────
+        'roof_title':            { da: 'Hvilken tagtype har du?', en: 'Which roof type do you have?', de: 'Welchen Dachtyp haben Sie?' },
+        'roof_subtitle':         { da: 'EPDM-gummi kan anvendes på de fleste tagkonstruktioner. Her er de fire typer vi oftest arbejder med.', en: 'EPDM rubber works on most roof constructions. Here are the four types we work with most often.', de: 'EPDM-Gummi eignet sich für die meisten Dachkonstruktionen. Hier sind die vier häufigsten Typen.' },
+        'roof_flat_title':       { da: 'Fladt tag', en: 'Flat roof', de: 'Flachdach' },
+        'roof_flat_desc':        { da: 'Carporte, tilbygninger, garager. Den mest udbredte EPDM-anvendelse. Én samlet dug, ingen samlinger.', en: 'Carports, extensions, garages. The most common EPDM use case. One single sheet, no seams.', de: 'Carports, Anbauten, Garagen. Die häufigste EPDM-Anwendung. Eine einzige Plane, keine Nähte.' },
+        'badge_suitable':        { da: 'EPDM-EGNET', en: 'EPDM SUITABLE', de: 'EPDM GEEIGNET' },
+        'roof_lean_title':       { da: 'Pulttag', en: 'Lean-to roof', de: 'Pultdach' },
+        'roof_lean_desc':        { da: 'Halvtag med én skrå flade. Typisk på udestuer og moderne tilbygninger. Hældningstillæg beregnes automatisk.', en: 'Single slope roof. Typical for conservatories and modern extensions. Slope surcharge calculated automatically.', de: 'Dach mit einer schrägen Fläche. Typisch für Wintergärten und moderne Anbauten. Neigungszuschlag wird automatisch berechnet.' },
+        'badge_surcharge':       { da: 'EPDM + HÆLDNINGSTILLÆG', en: 'EPDM + SLOPE SURCHARGE', de: 'EPDM + NEIGUNGSZUSCHLAG' },
+        'roof_gable_title':      { da: 'Sadeltag', en: 'Gable roof', de: 'Satteldach' },
+        'roof_gable_desc':       { da: 'Det klassiske danske heltag. EPDM kan bruges op til ca. 25° hældning. Ved stejlere tag: kontakt os.', en: 'The classic pitched roof. EPDM can be used up to approx. 25° pitch. For steeper roofs: contact us.', de: 'Das klassische Steildach. EPDM kann bis ca. 25° Neigung verwendet werden. Bei steileren Dächern: Kontaktieren Sie uns.' },
+        'roof_cph_title':        { da: 'Københavnertag', en: 'Copenhagen roof', de: 'Kopenhagener Dach' },
+        'roof_cph_desc':         { da: 'Flad midtersektion med skrå sider. Udbredt i KBH. EPDM lægges på den flade del – ofte som erstatning for tagpap.', en: 'Flat center with sloped sides. Common in Copenhagen. EPDM is installed on the flat part – often replacing felt.', de: 'Flacher Mittelteil mit schrägen Seiten. Verbreitet in Kopenhagen. EPDM wird auf dem flachen Teil verlegt – oft als Ersatz für Dachpappe.' },
+        'roof_note':             { da: 'Usikker på din tagtype? <a href="tel:53338938">Ring til Kasper på 53 33 89 38</a> eller send et billede.', en: 'Unsure about your roof type? <a href="tel:+4553338938">Call Kasper at +45 53 33 89 38</a> or send a picture.', de: 'Unsicher über Ihren Dachtyp? <a href="tel:+4553338938">Rufen Sie Kasper unter +45 53 33 89 38 an</a> oder senden Sie ein Bild.' },
+
         // ── About / Circle section ──────────────────────────────────────────
         'about.circle.subtitle': { da: 'Teknisk Rådgivning<br>& Materialesalg', en: 'Technical Advisory<br>& Material Sales', de: 'Technische Beratung<br>& Materialverkauf' },
         'about.years':           { da: 'Års Viden', en: 'Years Exp.', de: 'Jahre Erfahrung' },
