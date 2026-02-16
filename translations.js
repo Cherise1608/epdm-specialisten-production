@@ -150,19 +150,22 @@ var LanguageContext = (function () {
         // Text content
         document.querySelectorAll('[data-i18n]').forEach(function (el) {
             var key = el.getAttribute('data-i18n');
-            el.textContent = t(key);
+            var value = t(key);
+            if (value !== key) el.textContent = value;
         });
 
         // HTML content (for elements containing <strong>, <br>, etc.)
         document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
             var key = el.getAttribute('data-i18n-html');
-            el.innerHTML = t(key);
+            var value = t(key);
+            if (value !== key) el.innerHTML = value;
         });
 
         // Placeholders
         document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
             var key = el.getAttribute('data-i18n-placeholder');
-            el.placeholder = t(key);
+            var value = t(key);
+            if (value !== key) el.placeholder = value;
         });
 
         // Update <html lang="">
